@@ -8,6 +8,15 @@ module.exports.isLoggedIn = function (req, res, next) {
     } else res.redirect("/login")
 }
 
+module.exports.alreadyLoggedIn = function (req, res, next) {
+    if (req.session.currentUser) {
+        res.redirect("/home")
+    } else next()
+}
+
+
+
+
 /*module.exports.hasPlayedRound = function (req, res, next) {
     if (req.session.quiz.complete) {
         next()
