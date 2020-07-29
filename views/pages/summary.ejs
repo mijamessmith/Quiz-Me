@@ -1,0 +1,9 @@
+<script>
+  var title = <%- JSON.stringify(locals.title) %>
+    var message = <%- JSON.stringify(locals.message) %>
+  </script>
+
+<h1>Summary</h1>
+
+<h2>
+  You got <span id="finalScore"><%- parseInt(message) %></span> out of 10 correct</h2>
