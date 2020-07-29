@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\js\\config",
+    "\\js\\controller",
+    "\\js\\routes",
+    "\\views",
+    "\\views\\pages",
+    "\\views\\pages\\scripts",
+    "\\views\\partials"
+  ],
+  "SelectedNode": "\\views\\pages\\landing.ejs",
+  "PreviewInSolutionExplorer": false
+}

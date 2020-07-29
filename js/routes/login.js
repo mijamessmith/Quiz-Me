@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require("../controller/db")
 const routeFunctions = require("./routeFunctions");
 const isLoggedIn = routeFunctions.isLoggedIn;
+const alreadyLoggedIn = routeFunctions.alreadyLoggedIn
 
 router.get("/login", (req, res, next) => {
     var message = req.message;
@@ -10,7 +11,7 @@ router.get("/login", (req, res, next) => {
 });
 
 
-router.post("/logUserIn", async (req, res, next) => {
+router.post("/logUserIn", alreadyLoggedIn, async (req, res, next) => {
     var message;
     console.log(`Sent in a post using email: ${req.body.email} and password: ${req.body.password}.`)
     try {

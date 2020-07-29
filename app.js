@@ -69,6 +69,7 @@ const playGame = require("./js/routes/playGame")
 const landing = require("./js/routes/landing");
 const logout = require("./js/routes/logout");
 const summary = require("./js/routes/summary");
+const stats = require("./js/routes/stats");
 
 //
 app.use("/", loginRoute);
@@ -80,6 +81,7 @@ app.use("/", playGame);
 app.use("/", landing);
 app.use("/", logout);
 app.use("/", summary);
+app.use("/", stats);
 
 //server setup
 const PORT = process.env.PORT || 3000;

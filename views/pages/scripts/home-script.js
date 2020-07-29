@@ -1,5 +1,9 @@
 const readyPlay = document.querySelector("#readyPlay");
 
+
+
+
+
 readyPlay.addEventListener("click", function (event) {
     event.preventDefault()
     console.log("Home Button has been clicked")
