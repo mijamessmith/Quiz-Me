@@ -14,8 +14,8 @@ router.get("/getStats", isLoggedIn, (req, res, next) => {
         if (err) {
             throw err;
         } else {
-            req.session.currentUser.stats = result;
-            res.send(req.session.currentUser.stats);
+            req.session.currentUser[0].stats = result;
+            res.send(req.session.currentUser[0]);
         }
     });
 })

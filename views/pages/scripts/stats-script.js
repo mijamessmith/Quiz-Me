@@ -2,10 +2,10 @@ const attempts = document.querySelector("#attempts")
 const average = document.querySelector("#average")
 const high = document.querySelector("#high")
 const low = document.querySelector("#low")
-
+const userName = document.querySelector("h1");
 
 var stats;
-
+var user;
 
 $(document).ready(() => {
     let ajaxReq; 
@@ -20,7 +20,10 @@ $(document).ready(() => {
      
         if (data) {
             console.log(data)
-            stats = data;
+            user = data;
+            stats = data.stats;
+            //sets user name in the jumbotron
+            userName.textContent = data.firstName + " " + data.lastName;
             //adjust on page stats
             attempts.textContent = stats.length;
 
