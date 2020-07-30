@@ -1,10 +1,15 @@
 body {
-    background: #efefef;
+    background: #fffcdc;
+}
+
+h2 {
+    text-align: center;
 }
 
 .form-body {
     background: #fff;
     padding: 20px;
+    width: 150%;
 }
 
 .login-form {

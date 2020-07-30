@@ -46,8 +46,6 @@ $(document).ready(() => {
             let lowScore = Math.min(...scoreArr);
 
             low.textContent = lowScore;
-             
-            //window.location.replace(`http://localhost:3000/stats`); //sending a new addresss to load
         }
     });
 })

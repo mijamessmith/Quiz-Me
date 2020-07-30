@@ -7,7 +7,15 @@ const reset = document.querySelector("#reset");
 const displayQuestionNumber = document.querySelector("#questionNumber");
 const questionNum = document.querySelector("#questionNumber");
 const questionDisplay = document.querySelector("#question");
+//grab the spans in each div btn
+const btn1 = document.querySelector("#quiz-answer-1")
+const btn2 = document.querySelector("#quiz-answer-2")
+const btn3 = document.querySelector("#quiz-answer-3")
+const btn4 = document.querySelector("#quiz-answer-4")
+const btns = document.querySelectorAll("div.square");
 
+//grab guess span
+const guess = document.querySelector("#guess")
 
 //initialize questionNumber
 var questionNumber = 1;
@@ -28,15 +36,6 @@ var correctAns;
 //declare var for if the user has guessed yet
 var hasGuessed = false;
 
-//grab the spans in each div btn
-const btn1 = document.querySelector("#quiz-answer-1")
-const btn2 = document.querySelector("#quiz-answer-2")
-const btn3 = document.querySelector("#quiz-answer-3")
-const btn4 = document.querySelector("#quiz-answer-4")
-const btns = document.querySelectorAll(".q-option");
-
-//grab guess span
-const guess = document.querySelector("#guess")
 
 //function for creating text content for each question
 const displayQuestionOptions = function (data, questionNumber) {

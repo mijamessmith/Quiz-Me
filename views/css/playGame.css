@@ -1,6 +1,4 @@
-body {
-    background-color: #232323;
-}
+
 
 .square {
     width: 30%;
@@ -13,17 +11,20 @@ body {
 }
 
 .container {
+    
     max-width: 600px;
     margin: 0 auto;
 }
 
 h1 {
-    color: white;
+    color: black;
+    text-align: center;
 }
 
 #stripe {
     background: white;
     height: 30px;
+    align-content: center;
 }
 
 .correct {
