@@ -1,13 +1,17 @@
 #toAbout {
-    margin: 5px, 20px
+    width: 200px;
+    margin: 20px;
 }
 
 #playGame {
-
+    width: 200px;
+    margin: 20px;
 }
 
 .jumbotron {
-    background: #fff3fb;
+    margin-top: 100px;
+    background-color: #508AA8;
+    color: white;
 }
 
 #siteTitle {

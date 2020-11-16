@@ -1,0 +1,23 @@
+.about-icons {
+    margin-top: 100px;
+}
+
+.about-img {
+    height: 400px;
+    width: auto;
+}
+
+.about-text {
+    letter-spacing: .01px;
+    line-height: 25px;
+}
+
+.social {
+    list-style: none;
+    display: inline;
+}
+
+h1 {
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}

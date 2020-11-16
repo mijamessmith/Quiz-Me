@@ -7,25 +7,44 @@
 		<link href="https://fonts.googleapis.com/css2?family=Brawler&display=swap" rel="stylesheet">
 		<style>
 			*{
-					font-family: 'Brawler', serif;
+					font-family: 'Kufam'
 			}
 
 			body {
-					background: #fffcdc;
+					background-color: white;
 					}
-			footer {
-					 background: #fff3fb;
+			.footer {
+					background: #478978;
 					position: absolute;
 					bottom: 0;
 					width: 100%;
-					height: 2.5rem; 
+					height: 6em; 
 					text-align: center;
+					color: black;
+					align-items: center;
+					display: flex;
+					justify-content: center;
+					
+
 					 }
 
-			.footer {
-			background: #fff3fb;
-			}
+        .footer-container {
+       	text-align: center;
+        color: black;
+        align-items: center;
+        justify-content: center;
+        }
+		.footer-content{
+		  text-align: center;
+		  justify-content: center;
+          vertical-align: middle;
 		
+		}
+		
+		.footer-content a {
+		   color: black;
+		}
+
 		</style>
   </head>
   <body>
@@ -33,8 +52,11 @@
 		<%- body %>
 	</div>
   </body>
-  <footer>
-  <div class="footer">Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-  <div class="footer">copyright 2020 by Michael||CP and SmithBrosUnite</div>
+  <footer class="footer">
+  <div class="footer-container">
+  <div class="footer-content">Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+ 
+  <div class="footer-content">copyright 2020 by Michael||CP and SmithBrosUnite</div>
+  </div>
 </footer>
 </html>

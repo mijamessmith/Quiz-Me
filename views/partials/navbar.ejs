@@ -1,15 +1,27 @@
 <style>
   #entireNav {
-  background: #fff3fb;
-  height: 60px
+  background: #8B95C9;
+  height: 100px
   margin: 0px;
   padding: 40px
   border: 0px
   min-height: 60px
   font-size: 18px;
-  line-height: 40px
+  line-height: 60px
   display: flex;
+  font-family: font-family: 'Kufam', cursive;
+  color: black;
   }
+
+  .container-fluid {
+  height: 100px;
+  }
+
+  .right-navigation{
+  padding-right: 20px;
+  padding-top: 24px;
+  }
+
   #landing.navbar-brand {
   font-size: 20px;
   margin-left: 5px
@@ -25,15 +37,28 @@
 
   #titleSlogan {
   letter-spacing: 1.5px;
+  color: black;
   }
 
+  #titleSlogan:hover {
+  color: white;
+  }
 
 
   .navLinks{
   font-size: 18px;
   display: flex;
+  color: black;
   }
 
+  .navbar-nav li a:hover{
+  color: white !important;
+  }
+
+  .navbar-nav li a {
+  color: black !important;
+  font-size: 22px !important;
+  }
 </style>
 
 <nav id="entireNav" class="navbar navbar-default">
@@ -42,19 +67,21 @@
     <div class="navbar-header">
       <img id="siteIcon" src="../../images/bw_home_icon.png"></img>
       <a class="navbar-brand" href="#" id="landing">
-        <span id="titleSlogan">Think You Know Me</span></a>
+        <span id="titleSlogan">Think You Know Me?</span></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-      <ul class="nav navbar-nav">
+
+    <div class="right-navigation">
+    <ul class="nav navbar-nav">
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
+        <li class="navLinks">
           <a class="navLinks" href="/home">Profile</a>
         </li>
-        <li><a class="navLinks" href="" id="logoutBtn">Logout</a></li>
+        <li class="navLinks"><a class="navLinks" href="" id="logoutBtn">Logout</a></li>
       </ul>
-
+  </div>
   </div><!-- /.container-fluid -->
 </nav>
 
@@ -88,7 +115,7 @@
 
   let ajaxReq; //sometimes declaring and initializing has issues
   ajaxReq = $.ajax({
-  url: '/logout', //name of the route. If we want more params we use & to separate.
+  url: '/logout',
   type: 'GET',
   datatype: "json",
   data: "" //we're not sending

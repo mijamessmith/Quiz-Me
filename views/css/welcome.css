@@ -118,13 +118,19 @@ cbody {
     padding: 10px 25px;
     font-size: 14px;
     margin-top: 5px;
+
 }
 
-    .sa-innate-form button:hover {
-        border: 1px solid#db3b2b;
-        background: #db3b2b;
-        color: #fff;
-    }
+#toAbout {
+    width: 200px !important;
+    margin: 20px;
+}
+
+.sa-innate-form button:hover {
+    border: 1px solid#db3b2b;
+    background: #db3b2b;
+    color: #fff;
+}
 
 .sa-innate-form p {
     font-size: 13px;

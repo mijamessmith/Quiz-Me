@@ -1,7 +1,7 @@
 {
-  "name": "register-page3",
-  "version": "3.0.0",
-  "description": "Another registration page try",
+  "name": "How Well Do You Know Me?",
+  "version": "3.0.1",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
