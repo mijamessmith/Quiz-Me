@@ -2,6 +2,16 @@ body {
   
 }
 
+.login-container {
+    margin-top: 50px;
+    width: 100%;
+    border: 20px solid #508AA8;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 h2 {
     text-align: center;
 }
@@ -9,7 +19,7 @@ h2 {
 .form-body {
     background: #fff;
     padding: 20px;
-    width: 150%;
+    max-width: 150%;
 }
 
 .login-form {
