@@ -24,6 +24,10 @@
     height: 35px;
 }
 
+.container {
+    min-height: 800px;
+}
+
 .home-container {
     position: absolute;
     margin-top: 50px;

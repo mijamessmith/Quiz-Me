@@ -5,6 +5,10 @@
     padding: 20px;
 }
 
+.container {
+    min-height: 780px;
+}
+
 .about{
     width: 80%;
 }
