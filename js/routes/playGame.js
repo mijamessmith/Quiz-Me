@@ -35,7 +35,7 @@ router.post("/questionaire", isLoggedIn, (req, res, next) => {
 //});
 
 router.get("/getFirstQuestionOptions", (req, res, next) => {
-    //testing modified
+    //testing profile - remove if necessary
     if (!req.session.targetPerson) {
         req.session.targetPerson = 2
     }
@@ -57,12 +57,12 @@ router.get("/getFirstQuestionOptions", (req, res, next) => {
             if (err) {
                 throw err;
             } else req.session.quiz.questions = result;
-            console.log(req.session.quiz) //why is this logging undefined in bash but has values in chrome?
+            console.log(req.session.quiz) 
             return db.pool.query(`SELECT * FROM questionaire WHERE userId = ${req.session.targetPerson}`, (err, result) => {
                 if (err) {
                     throw err;
                 } else req.session.quiz.correctAnswer = result;
-                console.log(req.session.quiz) //why is this logging undefined in bash but has values in chrome?
+                console.log(req.session.quiz) 
                 res.send(req.session.quiz)
             })
         })

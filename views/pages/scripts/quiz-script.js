@@ -2,6 +2,7 @@
 var score = 0; //no way to alter this yet
 
 //grab necessary nodes
+const targetUserNameSpan = document.querySelector("#targetUserName");
 const nextQ = document.querySelector("#nextQ");
 const reset = document.querySelector("#reset");
 const displayQuestionNumber = document.querySelector("#questionNumber");
@@ -13,6 +14,8 @@ const btn2 = document.querySelector("#quiz-answer-2")
 const btn3 = document.querySelector("#quiz-answer-3")
 const btn4 = document.querySelector("#quiz-answer-4")
 const btns = document.querySelectorAll("div.square");
+const display = document.querySelector(".panel-body")
+
 
 //grab guess span
 const guess = document.querySelector("#guess")
@@ -36,6 +39,19 @@ var correctAns;
 //declare var for if the user has guessed yet
 var hasGuessed = false;
 
+var targetUser
+
+//get targetUserData
+
+const getTargetUserData = (data) => {
+    if (data.targetUserData) {
+        return data.targetUserData
+    } else return null
+}
+
+const displayTargetUser = (data) => {
+    targetUserNameSpan.textContent = data.firstName + " " + data.lastName;
+}
 
 //function for creating text content for each question
 const displayQuestionOptions = function (data, questionNumber) {
@@ -86,6 +102,9 @@ $(document).ready(() => {
                 questionArray.push(quizData.questions[i].question)
             }
             console.log("got questions", questionArray)
+            targetUser = getTargetUserData(data);
+            //set targetUser info on page
+            displayTargetUser(targetUser);
             loadQuestionDisplay(questionArray, questionNumber);
             displayQuestionOptions(quizData, questionNumber);
             //return; //might need to get rid of this
@@ -117,6 +136,9 @@ nextQ.addEventListener("click", () => {
                     displayQuestionOptions(quizData, questionNumber);
                     loadQuestionDisplay(questionArray, questionNumber);
                     displayQuestionNumber.textContent = questionNumber;
+                    display.classList.remove('displayCorrect');
+                    display.classList.remove('displayIncorrect');
+                    display.classList.add('panel-body');
                 }
             });
         } else if (questionNumber >= 10) {
@@ -143,32 +165,32 @@ nextQ.addEventListener("click", () => {
 
 //event for reset button
 
-reset.addEventListener("click", () => {
+//reset.addEventListener("click", () => {
 
-    //reset questionNum and hasGuessed
-    questionNumber = 0;
-    hasGuessed = false;
+//    //reset questionNum and hasGuessed
+//    questionNumber = 0;
+//    hasGuessed = false;
 
-    let ajaxReq;
-    ajaxReq = $.ajax({
-        url: "/getFirstQuestionOptions", //name of the route
-        type: 'GET',
-        datatype: "json",
-        data: "" //we're not sending
-    });
+//    let ajaxReq;
+//    ajaxReq = $.ajax({
+//        url: "/getFirstQuestionOptions", //name of the route
+//        type: 'GET',
+//        datatype: "json",
+//        data: "" //we're not sending
+//    });
 
-    ajaxReq.done(function (data) {
+//    ajaxReq.done(function (data) {
 
-        if (data) {
-            console.log(data)
-            quizData = data;
-            guess.textContent = "Select an option"
-            guess.classList.add("default");
-            displayQuestionOptions(quizData, questionNumber);
+//        if (data) {
+//            console.log(data)
+//            quizData = data;
+//            guess.textContent = "Select an option"
+//            guess.classList.add("default");
+//            displayQuestionOptions(quizData, questionNumber);
 
-        }
-    });
-})
+//        }
+//    });
+//})
 
 //start at 0
 const generateRandomNumber = function (num) {
@@ -182,9 +204,13 @@ function checkAnswer(text) {
         score++;
         guess.textContent = "Correct"
         guess.classList.add("correct");
+        display.classList.remove("panel-body")
+        display.classList.add("displayCorrect");
     } else {
-        guess.textContent = "Incorrect"
+        guess.textContent = "Incorrect";
         guess.classList.add("incorrect");
+        display.classList.remove("panel-body")
+        display.classList.add("displayIncorrect");
     }
 }
 
