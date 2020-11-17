@@ -1,20 +1,48 @@
+#playGame-container {
+   width: 100%;
+}
 
+.playGame-container h1 {
+    font-weight: 600;
+    letter-spacing: .1em;
+}
 
+.guess-container {
+    max-height: 100%;
+    width: 100%;
+    border: 10px solid #508AA8;
+    background-color: #003049;
+}
 .square {
-    height: 200px;
+    height: 180px;
     display: grid;
-    width: 200px;
-    background: purple;
-    padding-bottom: 30%;
+    width: 400px;
+    background-color: purple;
     float: left;
     margin: 10px;
     text-align: center;
     font-size: 25px;
+    color: white;
+    border: 4px solid black;
+    padding-top: 20px;
+    letter-spacing: .08em;
+}
+
+.square:hover{
+    background-color: orange;
+    border: 4px solid white;
+}
+.square-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
-    max-width: 600px;
     margin: 0 auto;
+    max-width: 1000px;
 }
 
 .optionText {
@@ -33,6 +61,10 @@ h1 {
     margin: 0 auto;
 }
 
+#guess {
+    letter-spacing: .05em;
+}
+
 .correct {
     color: yellow;
 }
@@ -45,13 +77,58 @@ h1 {
     color: black
 }
 
-#reset {
-    width: 50%;
-    margin: 0 auto;
-    align-items: center;
+#question{
+    color: white;
+    letter-spacing: .05em;
+    text-align: center;
 }
 
-.nextQ {
-    position: fixed;
-    left: 30%;
+#reset {
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    height: 35px;
+    font-size: 25px;
+    background-color: #031927;
+    color: white;
+    border: 2px solid black;
+}
+
+#reset:hover {
+    background-color: #BA1200
+}
+
+#nextQ {
+    position: relative;
+   
+    color: black;
+    background-color: #BA1200;
+    height: 90px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#nextQ:hover {
+    color: white;
+    background-color: #508AA8;
+}
+
+.panel-body p {
+    font-size: 25px;
+}
+
+.panel-body {
+    display: flex;
+    background-color: #508AA8;
+    color: black;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#questionNumber {
+    font-weight: 600;
+    color: red;
 }
