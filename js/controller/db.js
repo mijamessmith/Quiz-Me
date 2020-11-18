@@ -2,8 +2,7 @@
 
 const mysql = require("mysql");
 const settings = require("../config/settings");
-//const defaultCon = mysql.createConnection(settings.mysqlConfig)
-var pool = mysql.createPool(settings.mysqlPoolConfig);//trying pool connwction
+var pool = mysql.createPool(settings.mysqlPoolConfig);
 
 pool.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
     if (error) throw error;
@@ -12,7 +11,7 @@ pool.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 
 var knex = require('knex')({
     client: 'mysql',
-    connection: settings.mysqlConfig //accessing variables or functions from another file
+    connection: settings.mysqlConfig 
 });
 
 exports.knex = knex;

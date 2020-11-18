@@ -51,24 +51,3 @@ router.post("/register", (req, res, next) => {
 
 module.exports = router;
 
-
-
-
-//examples
-/*
-router.post("/googleSearch", (req, res, next) => {
-    var valueToSearchFor = req.query.valueToSearchFor; //grabs the data in the paran stored
-    return db.pool.query(`INSERT INTO search_history (search_value) VALUES ("${valueToSearchFor}")`, function (err, result) {
-        if (err) throw err;
-        else res.send(JSON.stringify(result));
-    });
-})
-
-router.post("/submit", (req, res, next) => {
-    console.log(req.body);
-    res.render("index", {
-        title: "Data Saved",
-        message: "Data Saved Successfully"
-    })
-})
-*/

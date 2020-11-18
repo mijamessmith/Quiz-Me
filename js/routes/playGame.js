@@ -18,22 +18,6 @@ router.post("/questionaire", isLoggedIn, (req, res, next) => {
 });
 
 
-//router.get("/getFirstQuestionOptions", isLoggedIn, (req, res, next) => {
-//    var resultObj = {};
-//    return db.pool.query(`SELECT * FROM incorrect_answers WHERE questionNum = 1`, (err, result) => {
-//        if (err) {
-//            throw err;
-//        } else resultObj.incorrectAnswers = result
-//        return db.pool.query(`SELECT * FROM questionaire WHERE userId = 1`, (err, result) => {
-//            if (err) {
-//                throw err;
-//            } else resultObj.correctAnswer = result;
-//            console.log(resultObj)
-//            res.send(resultObj)
-//        })
-//    });
-//});
-
 router.get("/getFirstQuestionOptions", (req, res, next) => {
     //testing profile - remove if necessary
     if (!req.session.targetPerson) {
@@ -83,8 +67,8 @@ router.get("/nextQuestion", (req, res, next) => {
             if (err) {
                 throw err;
             }
-            req.session.quiz.incorrectAnswers = result //should this be changed to req.session.incorrectAnswers
-            console.log(req.session.quiz) //why is this logging undefined in bash but has values in chrome?
+            req.session.quiz.incorrectAnswers = result;
+            console.log(req.session.quiz) 
             res.send(req.session.quiz);
         });
 });

@@ -4,9 +4,6 @@ const db = require("../controller/db")
 const routeFunctions = require("./routeFunctions")
 const isLoggedIn = routeFunctions.isLoggedIn;
 
-
-// appFunctions = require("../controller/appFunctions");
-
 router.get("/welcome", (req, res, next) => {
     res.render("pages/welcome", { title: "welcome" });
 });
@@ -19,7 +16,5 @@ router.post("/welcomeData", (req, res, next) => {
         else res.render("pages/home");
     });
 });
-
-
 
 module.exports = router;

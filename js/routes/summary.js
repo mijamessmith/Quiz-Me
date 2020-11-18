@@ -3,13 +3,11 @@ const router = express.Router();
 const db = require("../controller/db")
 const routeFunctions = require("./routeFunctions")
 const isLoggedIn = routeFunctions.isLoggedIn;
-//const hasPlayedRound = routeFunctions.hasPlayedRound;
 
 router.get("/summary", isLoggedIn, (req, res, next) => {
     let score = req.query.score;
     res.render("pages/summary", { message: `${score}` });
 });
-
 
 router.get("/postGame", (req, res, next) => {
     let score = req.query.score;
@@ -22,8 +20,6 @@ router.get("/postGame", (req, res, next) => {
         } 
      });
 })
-
-
 
 
 module.exports = router;

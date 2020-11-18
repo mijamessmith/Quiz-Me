@@ -1,5 +1,5 @@
 //declare quiz data after document.ready
-var score = 0; //no way to alter this yet
+var score = 0; 
 
 //grab necessary nodes
 const targetUserNameSpan = document.querySelector("#targetUserName");
@@ -82,19 +82,18 @@ function loadQuestionDisplay(questions, questionNumber) {
 }
 
 
-//Once the document is ready, calls jquery function
 $(document).ready(() => {
 
-    let ajaxReq; //sometimes declaring and initializing has issues
+    let ajaxReq; 
     ajaxReq = $.ajax({
-        url: "/getFirstQuestionOptions", //name of the route
+        url: "/getFirstQuestionOptions",
         type: 'GET',
         datatype: "json",
-        data: "" //we're not sending
+        data: "" 
     });
 
     ajaxReq.done(function (data) {
-        //change car color in front end with the data
+ 
         if (data) {
             console.log(data)
             quizData = data;
@@ -107,7 +106,6 @@ $(document).ready(() => {
             displayTargetUser(targetUser);
             loadQuestionDisplay(questionArray, questionNumber);
             displayQuestionOptions(quizData, questionNumber);
-            //return; //might need to get rid of this
         }
     });
 })
@@ -120,10 +118,10 @@ nextQ.addEventListener("click", () => {
             questionNumber++
             //request for next set of questions      
             ajaxReq = $.ajax({
-                url: "/nextQuestion", //lets have a parameter that equals the score
+                url: "/nextQuestion",
                 type: 'GET',
                 datatype: "json",
-                data: "" //we're sending correct answers?????????
+                data: "" 
             });
 
             ajaxReq.done(function (data) {
@@ -132,7 +130,7 @@ nextQ.addEventListener("click", () => {
                     quizData = data; //update quizData
                     hasGuessed = false; //reset for next q
                     guess.textContent = "Click an option";
-                    guess.classList.add("default") //add a default
+                    guess.classList.add("default")
                     displayQuestionOptions(quizData, questionNumber);
                     loadQuestionDisplay(questionArray, questionNumber);
                     displayQuestionNumber.textContent = questionNumber;
@@ -159,11 +157,13 @@ nextQ.addEventListener("click", () => {
         }
     } else {
         guess.textContent = "Take a guess before moving on"
-        guess.classList.add("default") //enter an empty class
+        guess.classList.add("default") 
     }
 })
 
-//event for reset button
+
+
+//event for optional reset button
 
 //reset.addEventListener("click", () => {
 
@@ -192,13 +192,12 @@ nextQ.addEventListener("click", () => {
 //    });
 //})
 
-//start at 0
+
 const generateRandomNumber = function (num) {
     return Math.floor(Math.random() * num)
 }
 
 
-//function for seeing if the answer was correct
 function checkAnswer(text) {
     if (text == correctAns) {
         score++;

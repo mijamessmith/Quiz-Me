@@ -42,6 +42,7 @@
     left: 25%;
     flex-wrap: wrap;
     display: flex;
+    letter-spacing: .03em
 }
 
 .home-stats {
@@ -59,7 +60,7 @@
     align-items: center;
     justify-content: center;
     color: black;
-
+    letter-spacing: .03em
 }
 
 .home-stats-title {
@@ -111,4 +112,25 @@
 
 .home-container h2 {
     font-weight: 600;
+}
+
+.invite-container {
+    position: relative;
+    margin-top: 100px;
+    background-color: #8B95C9;
+    width: 100%;
+    font-size: 21px;
+    padding: 10px;
+    font-weight: 600;
+    letter-spacing: .015em;
+}
+
+.invite-field {
+    min-width: 320px;
+    max-width: 400px; 
+}
+
+.invite-btn {
+    background-color: grey;
+    color: white;
 }

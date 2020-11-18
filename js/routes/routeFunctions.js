@@ -14,9 +14,6 @@ module.exports.alreadyLoggedIn = function (req, res, next) {
     } else next()
 }
 
-
-
-
 /*module.exports.hasPlayedRound = function (req, res, next) {
     if (req.session.quiz.complete) {
         next()
