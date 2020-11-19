@@ -1,14 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\js\\controller",
     "\\js\\routes",
     "\\views",
-    "\\views\\css",
-    "\\views\\pages",
-    "\\views\\pages\\scripts",
-    "\\views\\partials"
+    "\\views\\pages\\scripts"
   ],
-  "SelectedNode": "\\views\\pages\\scripts\\quiz-script.js",
+  "SelectedNode": "\\views\\resources.js",
   "PreviewInSolutionExplorer": false
 }

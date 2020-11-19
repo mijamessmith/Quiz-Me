@@ -8,21 +8,22 @@ router.get("/pregame", isLoggedIn, (req, res, next) => {
     res.render("pages/pregame", { title: "pregame" });
 });
 
-router.post("/questionaire", isLoggedIn, (req, res, next) => {
-
-    return db.pool.query(`INSERT INTO quiz_data (firstName, lastName, email, password) 
-    VALUES ("${req.body.firstName}", "${req.body.lastName}", "${req.body.email}", "${req.body.password}")`, (err, result) => {
-        if (err) throw err;
-        else res.render("pages/postgame");
-    });
+router.post("/questionaire", (req, res, next) => {
+    //find location of userId
+    var user
+    if (req.session.currentUserId) {
+        user = req.session.currentUserId
+    } else if (req.session.userData.userId) {
+        user = req.session.userData.userId
+    }
+   
+    return db.pool.query(`INSERT INTO questionaire (userId, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10) 
+    VALUES ("${user}", "${req.body.q1}", "${req.body.q2}", "${req.body.q3}", "${req.body.q4}", "${req.body.q5}",
+            "${req.body.q6}", "${req.body.q7}", "${req.body.q8}", "${req.body.q9}", "${req.body.q10}")`,
+        (err, result) => {
+            if (err) throw err;
+            else res.render("pages/home");
+        });
 });
-
-
-//router.post("/questionaire", (req, res, next) => {
-//    //get the appropriate id - this is a test, will need to be deleted later
-//    let userId = db.pool.query(`SELECT userId FROM user_data WHERE userId = 1`)
-//    console.log(userId)
-
-//});
 
 module.exports = router;

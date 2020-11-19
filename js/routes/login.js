@@ -42,11 +42,22 @@ router.post("/logUserIn", alreadyLoggedIn, async (req, res, next) => {
 
 router.post("/register", (req, res, next) => {
     var newUser = req.body.query
+    //save email for return query 
+    var newUserEmail = req.body.email;
     return db.pool.query(`INSERT INTO user_data (firstName, lastName, email, password) 
     VALUES ("${req.body.firstName}", "${req.body.lastName}", "${req.body.email}", "${req.body.password}")`, (err, result) => {
-        if (err) throw err;
-        else res.render("pages/welcome");
+            if (err) throw err;
+            //maybe query again to set this info into the session?
+            else return db.pool.query(`SELECT * from user_data WHERE email = "${newUserEmail}"`,
+                (err, result) => {
+                    if (err) throw err;
+                    if (result.length) {
+                        req.session.userData = result[0];
+                        res.render("pages/welcome");
+                    }
+                });
     });
+
 });
 
 module.exports = router;

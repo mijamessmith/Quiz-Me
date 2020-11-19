@@ -13,7 +13,7 @@ router.post("/welcomeData", (req, res, next) => {
     VALUES ("${req.body.streetAddress}", "${req.body.city}", "${req.body.state}", "${req.body.zipcode}",
     "${req.body.country}", "${req.body.sex}", "${req.body.birthdate}")`, (err, result) => {
         if (err) throw err;
-        else res.render("pages/home");
+        else res.render("pages/pregame");
     });
 });
 
